@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#sudoku {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-gap: 2px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #999;
+}
+
+input:focus {
+  outline: none;
+  background-color: #eef;
+}
+
+/* bordas dos blocos 3x3 */
+input:nth-child(3n) {
+  border-right: 2px solid black;
+}
+
+input:nth-child(9n+1) {
+  border-left: 2px solid black;
+}
+
+input:nth-child(n+19):nth-child(-n+27),
+input:nth-child(n+46):nth-child(-n+54) {
+  border-bottom: 2px solid black;
+}
+
+input:nth-child(n+1):nth-child(-n+9),
+input:nth-child(n+28):nth-child(-n+36) {
+  border-top: 2px solid black;
+}
+
+.error {
+  background-color: #fdd;
+}
+
+.fixed {
+  background-color: #ddd;
+  font-weight: bold;
+}
